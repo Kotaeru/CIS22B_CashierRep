@@ -1,9 +1,7 @@
 /*Kyle Hori, Kevin La
 CIS 22B
 Cash Register Program
-
 Program to simulate a book store cash register
-
 Prompt the user to select their option
 In cash register module let user input basic book information and program will bring up price info
 User confirms or denies information on screen
@@ -17,6 +15,7 @@ Methods of search and organizations are defined in the Project_Specifications pd
 
 #include<iostream>
 #include<string>
+#include<iomanip>
 
 using namespace std;
 
@@ -29,53 +28,69 @@ void bookInformation();
 //Don't worry about making it look nice just yet. It just needs to work right now.
 int main()
 {
-	int choice;
-	bool valid = false;
+	int choice = 0; // stores user's choice
 
-	cout << "<Insert Name Here>" << endl;
-	cout << "Main Menu" << endl << endl;
-
-	cout << "1. Cashier Module" << endl;
-	cout << "2. Inventory Database Module" << endl;
-	cout << "3. Report Module" << endl;
-	cout << "4. Exit" << endl << endl;
-
-	cout << "Enter Your Choice: ";
-	cin >> choice;
-
-	cout << endl;
-
-	while (valid == false) // while valid is false
+	// display the 'Main Menu' until item 4 is selected
+	while (choice != 4)
 	{
+		system("cls");  // Clears the screen before displaying main menu
+		// display company name and screen title
+		cout << "\nSerendipity Booksellers\n";
+		cout << "Main Menu\n\n";
 
-		if (choice >= 1 && choice <= 4)// if choice is greater than or equal to 1, and less than or equal to 4
+		// display menu items
+		cout << "\n1.Cashier Module\n";
+		cout << "2.Inventory Database Module\n";
+		cout << "3.Report Module\n";
+		cout << "4.Exit\n\n";
+
+		// display user prompt
+		cout << "Enter Your Choice: ";
+		cin >> choice;
+
+		// validate the user's input
+		while (choice < 1 || choice > 4)
 		{
-			valid = true; // is true
-		}
+			cout << "\nPlease enter a number in the range 1 - 4.\n\n";
 
-		else
-		{
-			cout << "Please Enter A Valid Option!" << endl << endl;// print message
-
-			cout << "Enter Your Choice Here: ";
+			cout << "Enter Your Choice: ";
 			cin >> choice;
-			cout << endl;
 		}
-	}
 
-	switch (choice)
-	{
-	case 1: cashierModule(); break;
-	case 2: InventoryDatabaseModule(); break;
-	case 3: reportModule(); break;
-	
-	}
+		// call the selected function
+		switch (choice)
+		{
+		case 1:
+			cashierModule();
+			break;
+
+		case 2:
+			InventoryDatabaseModule();
+			break;
+
+		case 3:
+			reportModule();
+			break;
+
+		case 4:
+			cout << "\nThank You for Visiting Serendipity Booksellers!\n\n";
+			exit(0);
+			break;
+
+		}	// end switch
+
+	}	// end the 'Main Menu' while loop
+
+	cout << endl << endl;
+
 	system("Pause");
 }
 
 void cashierModule()
 {
-	cout << "\n<Insert Name Here>" << endl << endl;
+	system("cls");  // Clears the screen before displaying main menu
+
+	cout << "\nSerendipity Booksellers" << endl << endl;
 	cout << "Date: " << endl << endl;
 	cout << left << setw(2) << "Qty  ISBN         Title                Price         Total    " << endl;
 
@@ -92,7 +107,9 @@ void InventoryDatabaseModule()
 	int choice;
 	bool valid = false;
 
-	cout << "<Insert Name Here>" << endl;
+	system("cls");  // Clears the screen before displaying main menu
+
+	cout << "Serendipity Booksellers" << endl;
 	cout << "Inventory Database" << endl << endl;
 
 	cout << "1. Look Up A Book" << endl;
@@ -130,7 +147,9 @@ void reportModule()
 	int choice;
 	bool valid = false;
 
-	cout << "<Insert Name>" << endl;
+	system("cls");  // Clears the screen before displaying main menu
+
+	cout << "Serendipity Booksellers" << endl;
 	cout << "Reports" << endl << endl;
 	cout << "1. Inventory Listing" << endl;
 	cout << "2. Inventory Wholesale Value" << endl;
@@ -164,17 +183,18 @@ void reportModule()
 
 void bookInformation()
 {
-	cout << "<Insert Name Here" << endl;
+	system("cls");  // Clears the screen before displaying main menu
+
+	cout << "Serendipity Booksellers" << endl;
 	cout << "Book Information" << endl << endl;
 
 	cout << "ISBN: " << endl;
 	cout << "Title: " << endl;
-	cout << "Author: " << endl;
+	cout << "Author: " << endl;	
 	cout << "Publisher: " << endl;
 	cout << "Date Added: " << endl;
 	cout << "Quantity-On-Hand: " << endl;
 	cout << "Wholesale Cost: " << endl;
 	cout << "Retail Price: " << endl;
 
-}
 }
