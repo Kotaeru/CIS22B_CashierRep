@@ -13,10 +13,13 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include "reports.h"
 #include "cashier.h"
 #include "bookdata.h"
+#define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 
+const int NUM_BOOKS = 20;
 const int NUM_WIDTH = 6;	    // the numeric display length
 const int TITLE_WIDTH = 26;	    // the title display length
 const int PRECISION = 2;	    // the decimal precision
@@ -91,7 +94,7 @@ void cashier()
 
 						// store book information in local variables
 						unitPrice[counter] = book[row].retail;
-						strcpy(thisTitle[counter], book[row].bookTitle);
+						strcpy_s(thisTitle[counter], book[row].bookTitle);
 
 						validQty = book[row].qtyOnHand;	// store quantity before input
 
@@ -232,7 +235,7 @@ void cashier()
 					 << "\t";
 
 				cout << left
-					 << setw(ISBN_WIDTH)
+					 << setw(ISBN_WIDTh)
 					 << isbnNumber[i]
 					 << "\t";
 

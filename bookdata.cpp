@@ -16,7 +16,7 @@
 using namespace std;
 
 const int NUM_BOOKS = 20;        // the maximum number of books
-extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures
+extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures. "extern" is used to tell the compiler that the data was declared somewhere else
 
 
 //*********************************************************
@@ -26,7 +26,7 @@ extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures
 void setTitle(char* newTitle, int subscript)
 {
 	strUpper(newTitle);
-	strcpy(book[subscript].bookTitle, newTitle);
+	strcpy_s(book[subscript].bookTitle, newTitle);
 }
 
 //*********************************************************
@@ -36,7 +36,7 @@ void setTitle(char* newTitle, int subscript)
 void setISBN(char* newISBN, int subscript)
 {
 	strUpper(newISBN);
-	strcpy(book[subscript].isbn, newISBN);
+	strcpy_s(book[subscript].isbn, newISBN);
 }
 
 //*********************************************************
@@ -46,7 +46,7 @@ void setISBN(char* newISBN, int subscript)
 void setAuthor(char* newAuthor, int subscript)
 {
 	strUpper(newAuthor);
-	strcpy(book[subscript].author, newAuthor);
+	strcpy_s(book[subscript].author, newAuthor);
 }
 
 //*********************************************************
@@ -56,7 +56,7 @@ void setAuthor(char* newAuthor, int subscript)
 void setPub(char* newPublisher, int subscript)
 {
 	strUpper(newPublisher);
-	strcpy(book[subscript].publisher, newPublisher);
+	strcpy_s(book[subscript].publisher, newPublisher);
 	
 }
 
@@ -66,7 +66,7 @@ void setPub(char* newPublisher, int subscript)
 
 void setDateAdded(char* newDate, int subscript)
 {
-	strcpy(book[subscript].dateAdded, newDate);
+	strcpy_s(book[subscript].dateAdded, newDate);
 }
 
 //*********************************************************

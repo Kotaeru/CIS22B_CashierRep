@@ -13,6 +13,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include<fstream>
+#include<string>
 #include "mainmenu.h"
 #include "bookdata.h"
 using namespace std;
@@ -20,8 +22,31 @@ using namespace std;
 const int NUM_BOOKS	 = 20;			// the maximum number of books
 BookData book[NUM_BOOKS];				// the array of 'BookData' stuctures
 
+
+
+
 int main()
 {
+	string fileName;
+	ifstream infile;
+	do
+	{
+		cout << "Please enter the name of the file with the book data: ";
+		getline(cin, fileName);
+		infile.open(fileName);
+		if (infile.fail)
+		{
+			cout << "Error opening file" << endl << endl;
+		}
+	} while (infile.fail);
+
+
+
+	for (int i = 0; i < 24; i++)
+	{
+		
+	}
+
 	int choice = 0; // stores user's choice
 
 	// display the 'Main Menu' until item 4 is selected

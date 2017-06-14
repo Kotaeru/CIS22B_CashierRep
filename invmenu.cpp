@@ -12,6 +12,7 @@
 // ********************************************************
 #include <iostream>
 #include "invmenu.h"
+#include "reports.h"
 #include "strupper.h"
 #include "bookdata.h"
 using namespace std;
@@ -103,7 +104,7 @@ void lookUpBook()
 void addBook()
 {
 	char title    [STR_SIZE];	// stores a book title the user enters
-	char isbn     [ISBN_WIDTH];	// stores an ISBN the user enters
+	char isbn     [ISBN_WIDTh];	// stores an ISBN the user enters
 	char author   [AU_SIZE];	// stores an author the user enters
 	char publisher[STR_SIZE];	// stores a publisher the user enters
 	char date     [STR_SIZE];	// stores a date the user enters
