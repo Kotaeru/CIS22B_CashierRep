@@ -1,33 +1,52 @@
-// ********************************************************
-// Starting Out with C++                                  *
-// From Control Stuctures through Objects                 *
-// seventh edition                                        *
-//                                                        *
-// Chapter 11 Structured Data                             *
-//                                                        *
-// Serendipity Booksellers Software Development           *
-// Project — Part 11: A Problem-Solving Exercise          *
-//                                                        *
-// Multi-File Program                                     *
-// ********************************************************
-#include <cstdlib>
 #include <iostream>
 #include <iomanip>
+#include<fstream>
+#include<string>
 #include "mainmenu.h"
 #include "bookdata.h"
 using namespace std;
 
-const int NUM_BOOKS	 = 20;			// the maximum number of books
+const int NUM_BOOKS = 25;			// the maximum number of books
 BookData book[NUM_BOOKS];				// the array of 'BookData' stuctures
 
 int main()
 {
+	string fileName;
+	ifstream infile;
+	char word[25];
+
+	do
+	{
+		cout << "Please enter the name of the file with the book data: ";
+		getline(cin, fileName);
+		infile.open(fileName);
+		if (infile.fail())
+		{
+			cout << "Error opening file" << endl << endl;
+		}
+	} while (infile.fail());
+
+	/*for (int i = 0; i < 24; i++)
+	{
+		infile >> word[i];
+
+		book[i].setTitle(word, i+1);
+		book[i].setISBN(word, i+1);
+		book[i].setAuthor(word, i+1);
+		book[i].setPub(word, i+1);
+		book[i].setDateAdded(word, i+1);
+		book[i].setQty(word, i+1);
+		book[i].setWholesale(word, i+1);
+		book[i].setRetail(word, i+1);
+
+	}*/
+
 	int choice = 0; // stores user's choice
 
 	// display the 'Main Menu' until item 4 is selected
 	while (choice != 4)
 	{
-	    system("cls");  // Clears the screen before displaying main menu
+		system("cls");  // Clears the screen before displaying main menu
 		// display company name and screen title
 		cout << "\nSerendipity Booksellers\n";
 		cout << "Main Menu\n\n";
@@ -54,22 +73,22 @@ int main()
 		// call the selected function
 		switch (choice)
 		{
-			case 1:
-				cashier();
-					break;
+		case 1:
+			cashier();
+			break;
 
-			case 2:
-				invMenu();
-					break;
+		case 2:
+			invMenu();
+			break;
 
-			case 3:
-				reports();
-					break;
+		case 3:
+			reports();
+			break;
 
-			case 4:
-				cout << "\nThank You for Visiting Serendipity Booksellers!\n\n";
-				exit(0);
-					break;
+		case 4:
+			cout << "\nThank You for Visiting Serendipity Booksellers!\n\n";
+			exit(0);
+			break;
 
 		}	// end switch
 
