@@ -421,7 +421,7 @@ void deleteBook()
 	for (row = 0; row < NUM_BOOKS; row++)
 	{
 		// search for a match
-		if (strstr(book[row].bookTitle, title)) // if they match
+		if ((book[row].bookTitle  title)) // if they match
 		{
 			// display a possible match
 			cout << "\nPossible Match Found:  "
@@ -455,7 +455,7 @@ void deleteBook()
 					book[row].author, book[row].publisher,
 					book[row].dateAdded, book[row].qtyOnHand,
 					book[row].wholesale, book[row].retail);*/
-				bookInfo(book[row].isbn, );
+				bookInfo(book[row].isbn);
 
 				// prompt the user to delete the record
 				cout << "Would you like to delete this entire record?(Y/N):  ";

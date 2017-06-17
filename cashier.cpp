@@ -60,13 +60,13 @@ void cashier()
 			while (choice != 2)
 			{
 				// prompt the user to enter an ISBN number
-				cout << "ISBN(#-###-#####-#): ";
+				cout << "ISBN: ";
 				cin.getline(isbnNumber[counter], STR_SIZE);
 
 				// enter the 'search for isbn number' for loop
 				for (int row = 0; row < NUM_BOOKS; row++)
 				{
-					if (strcmp(isbnNumber[counter], book[row].isbn) == 0)	// if they match
+					if ((isbnNumber[counter] == book[row].isbn) == 0)	// if they match
 					{
 						// display book information
 						cout << "Title: "
@@ -82,7 +82,7 @@ void cashier()
 
 						// store book information in local variables
 						unitPrice[counter] = book[row].retail;
-						strcpy_s(thisTitle[counter], book[row].bookTitle);
+						(thisTitle[counter], book[row].bookTitle);
 
 						validQty = book[row].qtyOnHand;	// store quantity before input
 
