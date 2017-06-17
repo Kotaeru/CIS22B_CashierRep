@@ -6,7 +6,7 @@
 #include "bookdata.h"
 using namespace std;
 
-const int	NUM_BOOKS = 20;   // the number of books in inventory
+const int	NUM_BOOKS = 25;   // the number of books in inventory
 const int	NUM_WIDTH = 6;	// the numeric display length
 const int	TITLE_WIDTH = 26;	// the title display length
 const int	ISBN_WIDTH = 14;	// the ISBN display length
@@ -447,7 +447,7 @@ void repAge()
 {
 	int id[NUM_BOOKS];			// array to track original order of subscripts
 	int* idPtr[NUM_BOOKS];		// pointer to tracking array
-	char* datePtr[NUM_BOOKS];	// array of pointers to dateAdded array
+	string datePtr[NUM_BOOKS];	// array of pointers to dateAdded array
 
 	for (int i = 0; i < NUM_BOOKS; i++)
 	{
@@ -463,7 +463,7 @@ void repAge()
 	int     startScan;
 	int     maxIndex;
 	int*    tempId;
-	char*   maxValue;
+	string   maxValue;
 
 	for (startScan = 0; startScan < NUM_BOOKS - 1; startScan++)
 	{
@@ -472,7 +472,7 @@ void repAge()
 		tempId = idPtr[startScan];
 		for (int index = startScan + 1; index < NUM_BOOKS; index++)
 		{
-			if (strcmp(datePtr[index], maxValue) > 0)
+			if ((datePtr[index] == maxValue) = true)
 			{
 				maxValue = datePtr[index];
 				tempId = idPtr[index];

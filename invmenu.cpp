@@ -2,7 +2,6 @@
 #include<string>
 #include "invmenu.h"
 #include "reports.h"
-#include "strupper.h"
 #include "bookdata.h"
 using namespace std;
 
@@ -64,11 +63,8 @@ void lookUpBook()
 				/*bookInfo(book[row].isbn, book[row].bookTitle,
 					book[row].author, book[row].publisher,
 					book[row].dateAdded, book[row].qtyOnHand,
-					book[row].wholesale, book[row].retail);*/
-
-				bookInfo(book[row].isbn, );
-
-
+					book[row].wholesale, book[row].retail);
+					*/
 				break;
 			}
 			else
@@ -199,7 +195,7 @@ void editBook()
 	for (row = 0; row < NUM_BOOKS; row++)
 	{
 		// search for a match
-		if (strstr(book[row].bookTitle, title)) // if they match
+		if ((book[row].bookTitle == title)) // if they match
 		{
 			// display a possible match
 			cout << "\nPossible Match Found:  "
@@ -421,7 +417,7 @@ void deleteBook()
 	for (row = 0; row < NUM_BOOKS; row++)
 	{
 		// search for a match
-		if ((book[row].bookTitle  title)) // if they match
+		if ((book[row].bookTitle == title)) // if they match
 		{
 			// display a possible match
 			cout << "\nPossible Match Found:  "
@@ -451,11 +447,11 @@ void deleteBook()
 			if (choice == 1)
 			{
 				// call function 'bookInfo' to display the results
-				/*bookInfo(book[row].isbn, book[row].bookTitle,
+				/* bookInfo(book[row].isbn, book[row].bookTitle,
 					book[row].author, book[row].publisher,
 					book[row].dateAdded, book[row].qtyOnHand,
-					book[row].wholesale, book[row].retail);*/
-				bookInfo(book[row].isbn);
+					book[row].wholesale, book[row].retail);
+		*/ 
 
 				// prompt the user to delete the record
 				cout << "Would you like to delete this entire record?(Y/N):  ";

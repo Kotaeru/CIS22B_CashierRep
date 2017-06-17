@@ -7,7 +7,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 using namespace std;
 
-const int NUM_BOOKS = 20;
+const int NUM_BOOKS = 25;
 const int NUM_WIDTH = 6;	    // the numeric display length
 const int TITLE_WIDTH = 26;	    // the title display length
 const int PRECISION = 2;	    // the decimal precision

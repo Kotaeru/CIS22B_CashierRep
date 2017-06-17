@@ -1,6 +1,5 @@
 #include <fstream>
 #include "bookdata.h"
-#include "strupper.h"
 #include <string>
 
 using namespace std;
