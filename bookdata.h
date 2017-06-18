@@ -37,4 +37,8 @@ public:
 	bool isEmpty();
 	void removeBook();
 
+	std::string getBookTitle()
+	{
+		return bookTitle;
+	}
 	};

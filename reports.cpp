@@ -472,7 +472,7 @@ void repAge()
 		tempId = idPtr[startScan];
 		for (int index = startScan + 1; index < NUM_BOOKS; index++)
 		{
-			if ((datePtr[index] == maxValue) = true)
+			if ((datePtr[index] == maxValue) == true)
 			{
 				maxValue = datePtr[index];
 				tempId = idPtr[index];

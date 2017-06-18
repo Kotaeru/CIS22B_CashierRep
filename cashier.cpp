@@ -70,7 +70,7 @@ void cashier()
 					{
 						// display book information
 						cout << "Title: "
-							<< book[row].bookTitle
+							<< book[row].getBookTitle()
 							<< endl;
 
 						cout << fixed

@@ -8,7 +8,6 @@ using namespace std;
 const int NUM_BOOKS = 25;
 extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures. "extern" is used to tell the compiler that the data was declared somewhere else
 
-const int STR_SIZE = 51; // represents the maximum string size
 const int PRECISION = 2; // the decimal precision
 
 //********************************************
