@@ -1,26 +1,13 @@
-// ********************************************************
-// Starting Out with C++                                  *
-// From Control Stuctures through Objects                 *
-// seventh edition                                        *
-//                                                        *
-// Chapter 11 Structured Data                             *
-//                                                        *
-// Serendipity Booksellers Software Development           *
-// Project — Part 11: A Problem-Solving Exercise          *
-//                                                        *
-// Multi-File Program                                     *
-// ********************************************************
-#include <cstdlib>
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <iomanip>
 #include "reports.h"
 #include "bookdata.h"
+
 using namespace std;
 
-const int	NUM_BOOKS	= 20;   // the number of books in inventory
 const int	NUM_WIDTH	=  6;	// the numeric display length
 const int	TITLE_WIDTH = 26;	// the title display length
-const int	ISBN_WIDTH	= 14;	// the ISBN display length
 const int	PRECISION	=  2;	// the decimal precision
 
 extern BookData book[NUM_BOOKS]; // the array of 'BookData' structures

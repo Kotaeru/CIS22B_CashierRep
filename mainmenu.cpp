@@ -1,28 +1,23 @@
-// ********************************************************
-// Starting Out with C++                                  *
-// From Control Stuctures through Objects                 *
-// seventh edition                                        *
-//                                                        *
-// Chapter 11 Structured Data                             *
-//                                                        *
-// Serendipity Booksellers Software Development           *
-// Project — Part 11: A Problem-Solving Exercise          *
-//                                                        *
-// Multi-File Program                                     *
-// ********************************************************
-#include <cstdlib>
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <iomanip>
+#include <string>
+#include <fstream>
 #include "mainmenu.h"
 #include "bookdata.h"
 using namespace std;
 
-const int NUM_BOOKS	 = 20;			// the maximum number of books
 BookData book[NUM_BOOKS];				// the array of 'BookData' stuctures
+
 
 int main()
 {
 	int choice = 0; // stores user's choice
+	string filename;
+
+	cout << "Please enter the directory of the text file to import data: ";
+	getline(cin, filename);
+
 
 	// display the 'Main Menu' until item 4 is selected
 	while (choice != 4)

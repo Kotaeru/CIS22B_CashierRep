@@ -1,39 +1,34 @@
-// ********************************************************
-// Starting Out with C++                                  *
-// From Control Stuctures through Objects                 *
-// seventh edition                                        *
-//                                                        *
-// Chapter 11 Structured Data                             *
-//                                                        *
-// Serendipity Booksellers Software Development           *
-// Project — Part 11: A Problem-Solving Exercise          *
-//                                                        *
-// Multi-File Program                                     *
-// ********************************************************
+#define _CRT_SECURE_NO_WARNINGS
 #include <cstring>
+#include <fstream>
 #include "bookdata.h"
-#include "strupper.h"
+#include "strUpper.h"
 using namespace std;
 
-const int NUM_BOOKS = 20;        // the maximum number of books
 extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures
+
+
+//*********************************************************
+// Constructor                                            *
+//*********************************************************
 
 
 //*********************************************************
 // Function setTitle                                      *
 //*********************************************************
 
-void setTitle(char* newTitle, int subscript)
+void BookData::setTitle(char* newTitle, int subscript)
 {
 	strUpper(newTitle);
 	strcpy(book[subscript].bookTitle, newTitle);
 }
 
+
 //*********************************************************
 // Function setISBN                                       *
 //*********************************************************
 
-void setISBN(char* newISBN, int subscript)
+void BookData::setISBN(char* newISBN, int subscript)
 {
 	strUpper(newISBN);
 	strcpy(book[subscript].isbn, newISBN);
@@ -43,7 +38,7 @@ void setISBN(char* newISBN, int subscript)
 // Function setAuthor                                     *
 //*********************************************************
 
-void setAuthor(char* newAuthor, int subscript)
+void BookData::setAuthor(char* newAuthor, int subscript)
 {
 	strUpper(newAuthor);
 	strcpy(book[subscript].author, newAuthor);
@@ -53,7 +48,7 @@ void setAuthor(char* newAuthor, int subscript)
 // Function setPub                                        *
 //*********************************************************
 
-void setPub(char* newPublisher, int subscript)
+void BookData::setPub(char* newPublisher, int subscript)
 {
 	strUpper(newPublisher);
 	strcpy(book[subscript].publisher, newPublisher);
@@ -64,7 +59,7 @@ void setPub(char* newPublisher, int subscript)
 // Function setDateAdded                                  *
 //*********************************************************
 
-void setDateAdded(char* newDate, int subscript)
+void BookData::setDateAdded(char* newDate, int subscript)
 {
 	strcpy(book[subscript].dateAdded, newDate);
 }
@@ -73,7 +68,7 @@ void setDateAdded(char* newDate, int subscript)
 // Function setQty                                        *
 //*********************************************************
 
-void setQty(int newQuantity, int subscript)
+void BookData::setQty(int newQuantity, int subscript)
 {
 	book[subscript].qtyOnHand = newQuantity;
 }
@@ -82,7 +77,7 @@ void setQty(int newQuantity, int subscript)
 // Function setWholesale                                  *
 //*********************************************************
 
-void setWholesale(double newWholesale, int subscript)
+void BookData::setWholesale(double newWholesale, int subscript)
 {
 	book[subscript].wholesale = newWholesale;
 }
@@ -91,7 +86,7 @@ void setWholesale(double newWholesale, int subscript)
 // Function setRetail                                     *
 //*********************************************************
 
-void setRetail(double newRetail, int subscript)
+void BookData::setRetail(double newRetail, int subscript)
 {
 	book[subscript].retail = newRetail;
 }
@@ -100,7 +95,7 @@ void setRetail(double newRetail, int subscript)
 // Function isEmpty                                       *
 //*********************************************************
 
-int isEmpty(int subscript)
+int BookData::isEmpty(int subscript)
 {
 	if (book[subscript].bookTitle[0] == 0)
 	{
@@ -113,8 +108,15 @@ int isEmpty(int subscript)
 // Function removeBook                                    *
 //*********************************************************
 
-void removeBook(int subscript)
+void BookData::removeBook(int subscript)
 {
 	book[subscript].bookTitle[0] = 0;
 	book[subscript].isbn[0] = 0;
 }
+
+/* istream& operator>> (std::istream inputfile, BookData book)
+{
+	
+	return inputFile;
+}
+*/

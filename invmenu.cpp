@@ -1,22 +1,10 @@
-// ********************************************************
-// Starting Out with C++                                  *
-// From Control Stuctures through Objects                 *
-// seventh edition                                        *
-//                                                        *
-// Chapter 11 Structured Data                             *
-//                                                        *
-// Serendipity Booksellers Software Development           *
-// Project — Part 11: A Problem-Solving Exercise          *
-//                                                        *
-// Multi-File Program                                     *
-// ********************************************************
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "invmenu.h"
-#include "strupper.h"
 #include "bookdata.h"
+#include "strUpper.h"
 using namespace std;
 
-const int NUM_BOOKS	= 20;        // the number of books in inventory
 extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures
 
 //********************************************
@@ -116,49 +104,49 @@ void addBook()
 	for (row = 0; row < NUM_BOOKS; row++)
 	{
 		// find the first book whose element is 0.
-		if (isEmpty(row))
+		if (book[row].isEmpty(row))
 		{
 				cin.ignore();
 
 			cout << "\nEnter Title: ";
 			cin.getline(title,STR_SIZE);
 
-			setTitle(title,row);
+			book[row].setTitle(title,row);
 
 			cout << "\nEnter ISBN(#-###-#####-#): ";
 			cin.getline(isbn,STR_SIZE);
 
-			setISBN(isbn,row);
+			book[row].setISBN(isbn, row);
 
 			cout << "\nEnter Author: ";
 			cin.getline(author,AU_SIZE);
 
-			setAuthor(author,row);
+			book[row].setAuthor(author, row);
 
 			cout << "\nEnter Publisher: ";
 			cin.getline(publisher,STR_SIZE);
 
-			setPub(publisher,row);
+			book[row].setPub(publisher, row);
 
 			cout << "\nEnter Date Added to Inventory (MM/DD/YYYY): ";
 			cin.getline(date, STR_SIZE);
 
-			setDateAdded(date,row);
+			book[row].setDateAdded(date, row);
 
 			cout << "\nEnter Quantity Being Added: ";
 			cin >> quantity;
 
-			setQty(quantity,row);
+			book[row].setQty(quantity, row);
 
 			cout << "\nEnter Wholesale Cost: ";
 			cin >> wholesale;
 
-			setWholesale(wholesale,row);
+			book[row].setWholesale(wholesale, row);
 
 			cout << "\nEnter Retail Price: ";
 			cin >> retail;
 
-			setRetail(retail,row);
+			book[row].setRetail(retail, row);
 
 			cout << "\n\nRecord was successfully entered.\n";
 
@@ -273,10 +261,10 @@ void editBook()
 
 						cin.ignore();
 
-					cout << "Enter new ISBN(#-###-#####-#): ";
+					cout << "Enter new ISBN: ";
 					cin >> isbn;
 
-					setISBN(isbn,row);
+					book[row].setISBN(isbn, row);
 
 						break;
 
@@ -290,7 +278,7 @@ void editBook()
 					cout << "Enter new Title:  ";
 					cin.getline(title, STR_SIZE);
 
-					setTitle(title,row);
+					book[row].setTitle(title, row);
 
 						break;
 
@@ -304,7 +292,7 @@ void editBook()
 					cout << "Enter new Author:  ";
 					cin.getline(author , AU_SIZE);
 
-					setAuthor(author,row);
+					book[row].setAuthor(author, row);
 
 						break;
 
@@ -318,7 +306,7 @@ void editBook()
 					cout << "Enter new Publisher:  ";
 					cin.getline(publisher , STR_SIZE);
 
-					setPub(publisher,row);
+					book[row].setPub(publisher, row);
 
 						break;
 
@@ -332,7 +320,7 @@ void editBook()
 					cout << "Enter new Date:  ";
 					cin.getline(date, STR_SIZE);
 
-					setDateAdded(date,row);
+					book[row].setDateAdded(date, row);
 
 						break;
 
@@ -346,7 +334,7 @@ void editBook()
 					cout << "Enter new Quantity on Hand:  ";
 					cin >> quantity;
 
-					setQty(quantity,row);
+					book[row].setQty(quantity, row);
 
 						break;
 
@@ -360,7 +348,7 @@ void editBook()
 					cout << "Enter new Wholesale Cost:  ";
 					cin >> wholesale;
 
-					setWholesale(wholesale,row);
+					book[row].setWholesale(wholesale, row);
 
 						break;
 
@@ -374,7 +362,7 @@ void editBook()
 					cout << "Enter new Retail Price:  ";
 					cin >> retail;
 
-					setRetail(retail,row);
+					book[row].setRetail(retail, row);
 
 				} // end switch
 
@@ -475,7 +463,7 @@ void deleteBook()
 
 			if (response == 'Y' || response == 'y')
 			{
-				removeBook(row);
+				book[row].removeBook(row);
 
 				// notify the user that the record has been deleted
 				cout << "\nRecord has been deleted.\n";
