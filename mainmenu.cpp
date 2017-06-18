@@ -25,12 +25,14 @@ int main()
 
 	} while (input.fail() == true);
 
+	input >> book[0].bookTitle;
+
 	// display the 'Main Menu' until item 4 is selected
 	while (choice != 4)
 	{
 	    system("cls");  // Clears the screen before displaying main menu
 		// display company name and screen title
-		cout << "\nSerendipity Booksellers\n";
+		cout << "Serendipity Booksellers\n";
 		cout << "Main Menu\n\n";
 
 		// display menu items

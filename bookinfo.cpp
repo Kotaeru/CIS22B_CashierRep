@@ -27,8 +27,11 @@ void bookInfo(char isbn[STR_SIZE], char title[STR_SIZE], char author[STR_SIZE],
 			  double wholeSale, double retail)
 {
 	// display company name and screen title
-	cout << "\t\t\tSerendipity Booksellers\n";
-	cout << "\t\t\t    Book Information\n\n";
+	
+	system("cls");
+
+	cout << "Serendipity Booksellers\n";
+	cout << "    Book Information\n\n";
 
 	// display information items
 	cout << "ISBN: " 

@@ -43,12 +43,12 @@ void cashier()
 
         system("cls");  // Clears screen before starting
 		// display company name and screen title
-		cout << "\n\nSerendipity Booksellers\n";
-		cout << " Cashier Module\n\n";
+		cout << "Serendipity Booksellers\n";
+		cout << "   Cashier Module\n\n";
 
 		// enter date of purchase
 		cin.ignore();
-		cout	<< "Date(MM/DD/YY): ";
+		cout << "Date(MM/DD/YY): ";
 		cin.getline(transDate,STR_SIZE);
 
 			// 'Add Another Title' add another title until item 2 is selected
@@ -58,7 +58,7 @@ void cashier()
 				while(choice != 2)
 				{
 					// prompt the user to enter an ISBN number
-					cout << "ISBN(#-###-#####-#): ";
+					cout << "ISBN: ";
 					cin.getline(isbnNumber[counter],STR_SIZE);
 
 				// enter the 'search for isbn number' for loop
@@ -115,6 +115,8 @@ void cashier()
 
 							cout << "\nSorry, insufficient quantity in stock.\n";
 
+							system("Pause");
+
 							return;		// return to the Main Menu
 						}
 
@@ -143,6 +145,7 @@ void cashier()
 							cout << "Enter Your Choice: ";
 							cin	 >> choice;
 							cin.ignore();
+
 						}
 
 						break;
@@ -189,7 +192,9 @@ void cashier()
 			{
 
 			// display company name
-			cout << "\n\nSerendipity Book Sellers\n\n";
+			
+			system("cls");
+			cout << "Serendipity Book Sellers\n\n";
 
 			// display date
 			cout << "Date: "
@@ -239,7 +244,8 @@ void cashier()
 					 << "\t$ ";
 
 				cout << setw(NUM_WIDTH)
-					 << subTotal[i];
+					 << subTotal[i]
+					 << endl;
 
 			}	// end the 'Display Information' for loop
 

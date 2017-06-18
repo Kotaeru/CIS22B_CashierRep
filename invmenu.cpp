@@ -63,6 +63,9 @@ void lookUpBook()
 					     book[row].author, book[row].publisher,
 						 book[row].dateAdded, book[row].qtyOnHand,
 						 book[row].wholesale, book[row].retail);
+
+				system("pause");
+
 				break;
 			}
 			else
@@ -80,6 +83,8 @@ void lookUpBook()
 			 << title
 			 << "\' was found."
 			 << "\n\n";
+
+		system("pause");
 	}
 
 }	// end function lookUpBook
@@ -106,14 +111,15 @@ void addBook()
 		// find the first book whose element is 0.
 		if (book[row].isEmpty(row))
 		{
-				cin.ignore();
+			cin.ignore();
 
-			cout << "\nEnter Title: ";
+			system("cls"); 
+			cout << "Enter Title: ";
 			cin.getline(title,STR_SIZE);
 
 			book[row].setTitle(title,row);
 
-			cout << "\nEnter ISBN(#-###-#####-#): ";
+			cout << "\nEnter ISBN: ";
 			cin.getline(isbn,STR_SIZE);
 
 			book[row].setISBN(isbn, row);
@@ -148,7 +154,9 @@ void addBook()
 
 			book[row].setRetail(retail, row);
 
-			cout << "\n\nRecord was successfully entered.\n";
+			cout << "\nRecord was successfully entered.\n";
+
+			system("pause");
 
 				break;
 		}
@@ -230,16 +238,18 @@ void editBook()
 						 book[row].wholesale, book[row].retail);
 			do
 			{
-				cout << "\nYou may edit any of the following fields:\n";
-				cout << "\t1.  ISBN\n";
-				cout << "\t2.  Title\n";
-				cout << "\t3.  Author's Name\n";
-				cout << "\t4.  Publisher's Name\n";
-				cout << "\t5.  Date Book Was Added To Inventory\n";
-				cout << "\t6.  Quantity On Hand\n";
-				cout << "\t7.  Wholesale Cost\n";
-				cout << "\t8.  Retail Price\n";
-				cout << "\t9.  Exit\n\n";
+				system("cls");
+
+				cout << "You may edit any of the following fields:\n";
+				cout << "1.  ISBN\n";
+				cout << "2.  Title\n";
+				cout << "3.  Author's Name\n";
+				cout << "4.  Publisher's Name\n";
+				cout << "5.  Date Book Was Added To Inventory\n";
+				cout << "6.  Quantity On Hand\n";
+				cout << "7.  Wholesale Cost\n";
+				cout << "8.  Retail Price\n";
+				cout << "9.  Exit\n\n";
 				cout << "Please choose 1 - 8 to EDIT an item, or 9 to EXIT:  ";
 				cin >> choice;
 
@@ -503,28 +513,29 @@ void invMenu()
 	// display the 'Inventory Database Menu' until item 5 is selected
 	while (choice != 5)
 	{
+		system("cls");
 
 		// display company name and screen title
-		cout << "\n\n\tSerendipity Booksellers\n";
-		cout << "\tInventory Database\n\n";
+		cout << "Serendipity Booksellers\n";
+		cout << "  Inventory Database\n\n";
 
 		// display menu items
-		cout << "\t\t1.Look Up a Book\n";
-		cout << "\t\t2.Add a Book\n";
-		cout << "\t\t3.Edit a Book's Record\n";
-		cout << "\t\t4.Delete a Book\n";
-		cout << "\t\t5.Return to the Main Menu\n\n";
+		cout << "1.Look Up a Book\n";
+		cout << "2.Add a Book\n";
+		cout << "3.Edit a Book's Record\n";
+		cout << "4.Delete a Book\n";
+		cout << "5.Return to the Main Menu\n\n";
 
 		// display user prompt
-		cout << "\t\tEnter Your Choice: ";
+		cout << "Enter Your Choice: ";
 		cin >> choice;
 
 		// validate the user's input
 		while (choice < 1 || choice > 5)
 		{
-			cout << "\n\t\tPlease enter a number in the range 1 - 5.\n\n";
+			cout << "\nPlease enter a number in the range 1 - 5.\n\n";
 
-			cout << "\t\tEnter Your Choice: ";
+			cout << "Enter Your Choice: ";
 			cin >> choice;
 		}
 
@@ -548,7 +559,7 @@ void invMenu()
 					break;
 
 			case 5:
-				cout << "\n\t\tYou selected item 5.\n";
+				cout << "\nYou selected item 5.\n";
 					break;
 
 		}	// end switch

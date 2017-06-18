@@ -19,15 +19,18 @@ extern BookData book[NUM_BOOKS]; // the array of 'BookData' structures
 void repListing()
 {
 	char repDate[STR_SIZE];	// stores today's date
-
+	
 	// prompt the user to enter today's date
-	cout << "\n\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(MM/DD/YY): ";
 	cin >> repDate;
 
 	cout << endl << endl;
 
 	// display company name
-	cout << "\n\n\t\tSerendipity Booksellers Inventory Listing\n\n";
+
+	system("cls");
+
+	cout << "Serendipity Booksellers Inventory Listing\n\n";
 
 	// display date
 	cout << "Date:\t\t\t"
@@ -76,10 +79,8 @@ void repListing()
 	cout << "\n\n_____________________________________________________";
 	cout << "\n\nEnd of Inventory Report.\n\n\n";
 
-	// Pause so that user can read report
-	cout << "Press Enter to continue...";
-	cin.ignore();
-	cin.get();
+	system("Pause");
+
 }
 
 //********************************************
@@ -89,25 +90,27 @@ void repListing()
 void repWholesale()
 {
 	char repDate[STR_SIZE];	// stores today's date
+	
 
 	// prompt the user to enter today's date
-	cout << "\n\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(MM/DD/YY): ";
 	cin >> repDate;
 
-	cout << endl << endl;
-
 	// display header
-	cout << "\n\n\t\t\tSerendipity Booksellers\n";
-	cout << "\t\t\tWholesale Value Listing\n\n";
+
+	system("cls");
+
+	cout << "Serendipity Booksellers\n";
+	cout << "Wholesale Value Listing\n\n";
 
 	// display date
-	cout << "\tDate: "
+	cout << "Date: "
 			<< repDate
 			<< endl;
 
 	// display item headings
-	cout << "\n\tTitle\t\t\t  ISBN\t\tQuantity\tWholesale\n";
-	cout << "\t_________________________________________________________________\n\n";
+	cout << "\nTitle\t\t\t  ISBN\t\tQuantity\tWholesale\n";
+	cout << "_________________________________________________________________\n\n";
 
 	double	itemSubTot	= 0;
 	double	subTot		= 0;
@@ -117,7 +120,7 @@ void repWholesale()
 	{
 		if (strcmp(book[i].isbn, end) != 0 ) // do not print empty records
 		{
-			cout << "\n\t"
+			cout << "\n"
 				 << left
 				 << setw(TITLE_WIDTH)
 				 << book[i].bookTitle;
@@ -145,13 +148,13 @@ void repWholesale()
 		}
 	}
 
-	cout << "\n\n\n\tTotal Wholesale Value:  $ "
+	cout << "\n\n\nTotal Wholesale Value:  $ "
 		 << subTot
 		 << endl;
 
-	cout << "\t_________________________________________________________________\n";
+	cout << "_________________________________________________________________\n";
 
-	cout << "\n\tEnd of Wholesale Report.\n\n\n";
+	cout << "\nEnd of Wholesale Report.\n\n\n";
 
 	// Pause so that user can read report
 	cout << "Press Enter to continue...";
@@ -166,25 +169,28 @@ void repWholesale()
 void repRetail()
 {
 	char repDate[STR_SIZE];	// stores today's date
-
+	
 	// prompt the user to enter today's date
-	cout << "\n\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(MM/DD/YY): ";
 	cin >> repDate;
 
 	cout << endl << endl;
 
 	// display header
-	cout << "\n\n\t\t\tSerendipity Booksellers\n";
-	cout << "\t\t\t  Retail Value Listing\n\n";
+
+	system("cls");
+
+	cout << "Serendipity Booksellers\n";
+	cout << " Retail Value Listing\n\n";
 
 	// display date
-	cout << "\tDate: "
+	cout << "Date: "
 		 << repDate
 		 << endl;
 
 	// display item headings
-	cout << "\n\tTitle\t\t\t  ISBN\t\tQuantity\tRetail\n";
-	cout << "\t_________________________________________________________________\n\n";
+	cout << "\nTitle\t\t\t  ISBN\t\tQuantity\tRetail\n";
+	cout << "_________________________________________________________________\n\n";
 
 	double	itemSubTot	= 0;
 	double	subTot		= 0;
@@ -194,7 +200,7 @@ void repRetail()
 	{
 		if (strcmp(book[i].isbn, end) != 0 ) // do not print empty records
 		{
-			cout << "\n\t"
+			cout << "\n"
 				 << left
 				 << setw(TITLE_WIDTH)
 				 << book[i].bookTitle;
@@ -222,14 +228,11 @@ void repRetail()
 		}
 	}
 
-	cout << "\n\n\n\tTotal Retail Value:  $" << subTot << endl;
-	cout << "\t_________________________________________________________________\n\n";
-	cout << "\n\tEnd of Retail Report.\n\n\n";
+	cout << "\n\n\nTotal Retail Value:  $" << subTot << endl;
+	cout << "_________________________________________________________________\n\n";
+	cout << "\nEnd of Retail Report.\n\n\n";
 
-	// Pause so that user can read report
-	cout << "Press Enter to continue...";
-	cin.ignore();
-	cin.get();
+	system("pause");
 }
 
 //********************************************
@@ -281,31 +284,34 @@ void repQty()
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\n\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(MM/DD/YY): ";
 	cin >> repDate;
 
 	cout << endl << endl;
 
 	// display header
-	cout << "\n\n\t\t\tSerendipity Booksellers\n";
-	cout << "\t\t\t  Quantity Listing\n\n";
+
+	system("cls");
+
+	cout << "Serendipity Booksellers\n";
+	cout << "Quantity Listing\n\n";
 
 	// display date
-	cout << "\tDate: "
+	cout << "Date: "
 		 << repDate
 		 << endl;
 
 	// display item headings
 
-	cout << "\n\tTitle\t\t\t  ISBN\t\tQuantity\n";
-	cout << "\t_______________________________________________________\n";
+	cout << "\nTitle\t\t\t  ISBN\t\tQuantity\n";
+	cout << "\_______________________________________________________\n";
 	char end[] = {'\0'};
 
 	for (int j = 0; j < NUM_BOOKS; j++)
 	{
 		if (strcmp(book[*(idPtr[j])].isbn, end) != 0 ) // do not print empty records
 		{
-			cout << "\n\t"
+			cout << "\n"
 				 << left
 				 << setw(TITLE_WIDTH)
 				 << book[*(idPtr[j])].bookTitle;
@@ -320,13 +326,10 @@ void repQty()
 				 << "\n";
 		}
 	}
-	cout << "\t_______________________________________________________\n";
-	cout << "\n\tEnd of Quantity Report.\n\n\n";
+	cout << "_______________________________________________________\n";
+	cout << "\nEnd of Quantity Report.\n\n\n";
 
-	// Pause so that user can read report
-	cout << "Press Enter to continue...";
-	cin.ignore();
-	cin.get();
+	system("pause");
 }
 
 //********************************************
@@ -379,23 +382,25 @@ void repCost()
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\n\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(MM/DD/YY): ";
 	cin >> repDate;
 
 	cout << endl << endl;
 
 	// display header
-	cout << "\n\n\t\t\tSerendipity Booksellers\n";
-	cout << "\t\t\t    Cost Listing\n\n";
+	system("cls");
+
+	cout << "Serendipity Booksellers\n";
+	cout << "   Cost Listing\n\n";
 
 	// display date
-	cout << "\tDate: "
+	cout << "Date: "
 		 << repDate
 		 << endl;
 
 	// display item headings
-	cout << "\n\tTitle\t\t\t  ISBN\t\tQuantity\tWholesale\n";
-	cout << "\t_________________________________________________________________\n\n";
+	cout << "\nTitle\t\t\t  ISBN\t\tQuantity\tWholesale\n";
+	cout << "_________________________________________________________________\n\n";
 
 	char end[] = {'\0'};
 
@@ -403,8 +408,7 @@ void repCost()
 	{
 		if (strcmp(book[*(idPtr[j])].isbn, end) != 0 ) // do not print empty records
 		{
-			cout << "\t"
-				 << left
+			cout << left
 				 << setw(TITLE_WIDTH)
 				 << book[*(idPtr[j])].bookTitle;
 
@@ -428,13 +432,10 @@ void repCost()
 		}
 	}
 
-	cout << "\t_________________________________________________________________\n";
-	cout << "\n\tEnd of Cost Report.\n\n\n";
-
-	// Pause so that user can read report
-	cout << "Press Enter to continue...";
-	cin.ignore();
-	cin.get();
+	cout << "_________________________________________________________________\n";
+	cout << "\nEnd of Cost Report.\n\n\n";
+	
+	system("pause");
 }
 
 //********************************************
@@ -487,23 +488,25 @@ void repAge()
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\n\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(MM/DD/YY): ";
 	cin >> repDate;
 
 	cout << endl << endl;
 
 	// display header
-	cout << "\n\n\t\t\tSerendipity Booksellers\n";
-	cout << "\t\t\t    Age Listing\n\n";
+	system("cls");
+
+	cout << "Serendipity Booksellers\n";
+	cout << "    Age Listing\n\n";
 
 	// display date
-	cout << "\tDate: "
+	cout << "Date: "
 		 << repDate
 		 << endl;
 
 	// display item headings
-	cout << "\n\tTitle\t\t\t  ISBN\t\tQuantity\tDate Added\n";
-	cout << "\t_________________________________________________________________\n\n";
+	cout << "\nTitle\t\t\t  ISBN\t\tQuantity\tDate Added\n";
+	cout << "_________________________________________________________________\n\n";
 
 	char end[] = {'\0'};
 
@@ -511,8 +514,7 @@ void repAge()
 	{
 		if (strcmp(book[*(idPtr[j])].isbn, end) != 0 ) // do not print empty records
 		{
-			cout << "\t"
-				 << left
+			cout << left
 				 << setw(TITLE_WIDTH)
 				 << book[*(idPtr[j])].bookTitle;
 
@@ -536,13 +538,11 @@ void repAge()
 		}
 	}
 
-	cout << "\t_________________________________________________________________\n";
-	cout << "\n\tEnd of Age Report.\n\n\n";
+	cout << "_________________________________________________________________\n";
+	cout << "\nEnd of Age Report.\n\n\n";
 
-	// Pause so that user can read report
-	cout << "Press Enter to continue...";
-	cin.ignore();
-	cin.get();
+	system("pause");
+
 }
 
 //********************************************
@@ -558,28 +558,28 @@ void reports()
 	{
 	    system("cls");
 		// display company name and screen title
-		cout << "\n\n\t\t\tSerendipity Booksellers\n";
-		cout << "\t\t\t\tReports\n\n";
+		cout << "Serendipity Booksellers\n";
+		cout << "Reports\n\n";
 
 		// display information items
-		cout << "\t\t1.Inventory Listing\n";
-		cout << "\t\t2.Inventory Wholesale Value\n";
-		cout << "\t\t3.Inventory Retail Value\n";
-		cout << "\t\t4.Listing by Quantity\n";
-		cout << "\t\t5.Listing by Cost\n";
-		cout << "\t\t6.Listing by Age\n";
-		cout << "\t\t7.Return to the Main Menu\n\n";
+		cout << "1.Inventory Listing\n";
+		cout << "2.Inventory Wholesale Value\n";
+		cout << "3.Inventory Retail Value\n";
+		cout << "4.Listing by Quantity\n";
+		cout << "5.Listing by Cost\n";
+		cout << "6.Listing by Age\n";
+		cout << "7.Return to the Main Menu\n\n";
 
 		// display user prompt
-		cout << "\t\tEnter Your Choice: ";
+		cout << "Enter Your Choice: ";
 		cin >> choice;
 
 		// validate the user's input
 		while (choice < 1 || choice > 7)
 		{
-			cout << "\n\t\tPlease enter a number in the range 1 - 7.\n";
+			cout << "\nPlease enter a number in the range 1 - 7.\n";
 
-			cout << "\t\tEnter Your Choice: ";
+			cout << "\tEnter Your Choice: ";
 			cin >> choice;
 		}
 
@@ -610,7 +610,7 @@ void reports()
 						break;
 
 				case 7:
-					cout << "\n\t\tYou selected item 7.\n";
+					cout << "\nYou selected item 7.\n";
 						break;
 
 			}	// end switch

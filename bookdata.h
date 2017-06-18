@@ -20,10 +20,11 @@ public:
 	int	qtyOnHand;		        // stores the quantity on hand of a book
 	double wholesale,	        // stores the wholesale price of a book
 		retail;		        // stores the retail price of a book
+
 	
 	// Friend function
 
-	friend std::istream& operator>> (std::istream& inputFile, BookData& book);
+	friend std::istream& operator>> (std::istream& input, BookData& book);
 
 	// Function prototype
 	void setTitle(char*, int);

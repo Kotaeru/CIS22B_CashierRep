@@ -6,8 +6,6 @@
 #include "strUpper.h"
 using namespace std;
 
-const int NUM_BOOKS = 25;	// the number of books in inventory
-
 extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures
 
 
