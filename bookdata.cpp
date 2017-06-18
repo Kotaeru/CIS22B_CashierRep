@@ -1,9 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <cstring>
+#include <iostream>
 #include <fstream>
 #include "bookdata.h"
 #include "strUpper.h"
 using namespace std;
+
+const int NUM_BOOKS = 25;	// the number of books in inventory
 
 extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures
 
@@ -113,10 +116,3 @@ void BookData::removeBook(int subscript)
 	book[subscript].bookTitle[0] = 0;
 	book[subscript].isbn[0] = 0;
 }
-
-/* istream& operator>> (std::istream inputfile, BookData book)
-{
-	
-	return inputFile;
-}
-*/

@@ -1,30 +1,17 @@
-// ********************************************************
-// Starting Out with C++                                  *
-// From Control Stuctures through Objects                 *
-// seventh edition                                        *
-//                                                        *
-// Chapter 11 Structured Data                             *
-//                                                        *
-// Serendipity Booksellers Software Development           *
-// Project — Part 11: A Problem-Solving Exercise          *
-//                                                        *
-// Multi-File Program                                     *
-// ********************************************************
+#define _CRT_SECURE_NO_WARNINGS
 #include <string.h>
 #include <fstream>
 
 const int STR_SIZE  = 51;   // represents the maximum string size for bookTitle
 const int ISBN_WIDTH = 14;	// the ISBN display length
 const int AU_SIZE = 31;     // the maximum number of characters for author string
-const int NUM_BOOKS = 20;	// the number of books in inventory
+const int NUM_BOOKS = 25;	// the number of books in inventory
 
 // BookData structure declaration.
 
 class BookData
 {
 public:
-	//BookData();
-
 	char bookTitle[STR_SIZE],	// stores the tile of a book
 		isbn[ISBN_WIDTH],	    // stores the isbn number of a book
 		author[AU_SIZE],       // stores the book author's name
@@ -33,13 +20,12 @@ public:
 	int	qtyOnHand;		        // stores the quantity on hand of a book
 	double wholesale,	        // stores the wholesale price of a book
 		retail;		        // stores the retail price of a book
-	// std::istream inputFile;
-
+	
 	// Friend function
 
-	// friend istream& operator>> (std::istream& inputFile, BookData& book);
+	friend std::istream& operator>> (std::istream& inputFile, BookData& book);
 
-	// Function prototypes
+	// Function prototype
 	void setTitle(char*, int);
 	void setISBN(char*, int);
 	void setAuthor(char*, int);

@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <iomanip>
-#include <string>
 #include <fstream>
+#include <string>
 #include "mainmenu.h"
 #include "bookdata.h"
 using namespace std;
@@ -14,10 +14,16 @@ int main()
 {
 	int choice = 0; // stores user's choice
 	string filename;
+	ifstream input;
 
-	cout << "Please enter the directory of the text file to import data: ";
-	getline(cin, filename);
+	do
+	{
+		cout << "Please enter the directory of the text file to import data: ";
+		getline(cin, filename);
 
+		input.open(filename);
+
+	} while (input.fail() == true);
 
 	// display the 'Main Menu' until item 4 is selected
 	while (choice != 4)
