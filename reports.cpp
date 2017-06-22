@@ -19,9 +19,10 @@ extern BookData book[NUM_BOOKS]; // the array of 'BookData' structures
 void repListing()
 {
 	char repDate[STR_SIZE];	// stores today's date
+	char* title;
 	
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(YY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
@@ -41,39 +42,40 @@ void repListing()
 
 	for (int i = 0; i < NUM_BOOKS; i++)
 	{
-		if (strcmp(book[i].isbn, end) != 0 ) // do not print an empty record
+		if (strcmp(book[i].isbn, end) != 0) // do not print an empty record
 		{
 			cout << "\n_____________________________________________________";
 
 			cout << "\n\nTitle:\t\t\t"
-				 << book[i].bookTitle;
+				<< book[i].bookTitle;
 
 			cout << "\nISBN:\t\t\t"
-				 << book[i].isbn;
+				<< book[i].isbn;
 
 			cout << "\nAuthor:\t\t\t"
-				 << book[i].author;
+				<< book[i].author;
 
 			cout << "\nPublisher:\t\t"
-				 << book[i].publisher;
+				<< book[i].publisher;
 
 			cout << "\nDate Added:\t\t"
-				 << book[i].dateAdded;
+				<< book[i].dateAdded;
 
 			cout << fixed
-				 << showpoint
-				 << right
-				 << setprecision(PRECISION);
+				<< showpoint
+				<< right
+				<< setprecision(PRECISION);
 
 			cout << "\nQuantity On Hand:\t"
-					<< book[i].qtyOnHand;
+				<< book[i].qtyOnHand;
 
 			cout << "\nWholesale Cost:\t\t"
-			     << book[i].wholesale;
+				<< book[i].wholesale;
 
 			cout << "\nRetail Price:\t\t"
-				 << book[i].retail;
+				<< book[i].retail;
 		}
+
 	}
 
 	cout << "\n\n_____________________________________________________";
@@ -93,7 +95,7 @@ void repWholesale()
 	
 
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(YY/MM/DD): ";
 	cin >> repDate;
 
 	// display header
@@ -171,7 +173,7 @@ void repRetail()
 	char repDate[STR_SIZE];	// stores today's date
 	
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(YY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
@@ -261,7 +263,7 @@ void repQty()
 	int* tempId;
 	int* maxValue;
 
-	for (startScan = 0; startScan < NUM_BOOKS - 1; startScan++)
+for (startScan = 0; startScan < NUM_BOOKS - 1; startScan++)
 	{
 		maxIndex = startScan;
 		maxValue = qtyPtr[startScan];
@@ -284,7 +286,7 @@ void repQty()
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(YY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
@@ -382,7 +384,7 @@ void repCost()
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(YY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
@@ -469,6 +471,7 @@ void repAge()
 		maxIndex = startScan;
 		maxValue = datePtr[startScan];
 		tempId = idPtr[startScan];
+
 		for (int index = startScan + 1; index < NUM_BOOKS; index++)
 		{
 			if (strcmp(datePtr[index], maxValue) > 0)
@@ -488,7 +491,7 @@ void repAge()
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(MM/DD/YY): ";
+	cout << "\nEnter Today's Date(YY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;

@@ -134,7 +134,7 @@ void addBook()
 
 			book[row].setPub(publisher, row);
 
-			cout << "\nEnter Date Added to Inventory (MM/DD/YYYY): ";
+			cout << "\nEnter Date Added to Inventory (YYYY/MM/DD): ";
 			cin.getline(date, STR_SIZE);
 
 			book[row].setDateAdded(date, row);
@@ -478,6 +478,8 @@ void deleteBook()
 				// notify the user that the record has been deleted
 				cout << "\nRecord has been deleted.\n";
 
+				system("pause");
+
 			} // end if
 
 				break;
@@ -486,6 +488,8 @@ void deleteBook()
 			{
 				cout << "\nRecord was not deleted.\n";
 				continue;
+
+				system("pause");
 			}
 
 		}	// end if match found
@@ -498,6 +502,8 @@ void deleteBook()
 			 << title
 			 << "\' was found."
 			 << "\n\n";
+
+		system("pause");
 	}
 
 }  // end function deleteBook

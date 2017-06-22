@@ -8,4 +8,4 @@ extern BookData book[NUM_BOOKS]; // the array of 'BookData' stuctures
 // Friend Function To Import Data                         *
 //*********************************************************
 
- std::istream& operator>> (std::istream& input, BookData& book);
+ std::ifstream& operator>> (std::ifstream& input, BookData& book);

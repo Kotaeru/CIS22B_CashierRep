@@ -1,18 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "friend.h"
 #include <iostream>
+#include <fstream>
+#include <string>
 
-std::istream& operator>> (std::istream& input, BookData& book)
+std::ifstream& operator>> (std::ifstream& input, BookData& book)
 {
 	
-			input >> 
-			book.bookTitle >>
-			book.isbn >>
-			book.author >>
-			book.publisher >>
-			book.dateAdded >>
-			book.qtyOnHand >>
-			book.wholesale >>
-			book.retail;	
+	input >> book.bookTitle;
+	input >> book.bookTitle;
+	input >> book.isbn;
+	input >> book.author;
+	input >> book.publisher;
+	input >> book.dateAdded;
+	input >> book.qtyOnHand;
+	input >> book.wholesale;
+	input >> book.retail;	
 
 	return input;
 }

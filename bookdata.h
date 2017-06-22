@@ -7,17 +7,26 @@ const int ISBN_WIDTH = 14;	// the ISBN display length
 const int AU_SIZE = 31;     // the maximum number of characters for author string
 const int NUM_BOOKS = 25;	// the number of books in inventory
 
-// BookData structure declaration.
-
-class BookData
+class Dates
 {
 public:
+
+	char dateAdded[11];
+};
+
+
+// BookData class declaration.
+
+class BookData:public Dates
+{
+public:
+		
 	char bookTitle[STR_SIZE],	// stores the tile of a book
+		tempTitle[STR_SIZE],	// stores the the title of a book in a temp array to remove '_'
 		isbn[ISBN_WIDTH],	    // stores the isbn number of a book
 		author[AU_SIZE],       // stores the book author's name
-		publisher[31],	        // stores the book publisher's name
-		dateAdded[11];	        // stores the date a book was added into inventory
-	int	qtyOnHand;		        // stores the quantity on hand of a book
+		publisher[31];      // stores the book publisher's name
+	int	 qtyOnHand;		        // stores the quantity on hand of a book
 	double wholesale,	        // stores the wholesale price of a book
 		retail;		        // stores the retail price of a book
 

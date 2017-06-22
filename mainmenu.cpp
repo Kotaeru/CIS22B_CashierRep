@@ -3,12 +3,15 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+#include <cstring>
+
 #include "mainmenu.h"
 #include "bookdata.h"
+#include "strUpper.h"
+
 using namespace std;
 
 BookData book[NUM_BOOKS];				// the array of 'BookData' stuctures
-
 
 int main()
 {
@@ -18,14 +21,41 @@ int main()
 
 	do
 	{
-		cout << "Please enter the directory of the text file to import data: ";
-		getline(cin, filename);
+		try
+		{
+			cout << "Please enter the directory of the text file to import data: ";
+			getline(cin, filename);
 
-		input.open(filename);
+			input.open(filename);
+
+			if (input.fail())
+				throw 4562389;
+		}
+
+		catch (int x)
+		{
+			cout << "Unable to open the file. Error #" << x <<  endl << "Please Try Again. " << endl << endl;
+		}
 
 	} while (input.fail() == true);
 
-	input >> book[0].bookTitle;
+	for (int i = 0; i < NUM_BOOKS - 1; i++) // Inputting and Capitalizing Each Letter that is read
+	
+	{
+			input >> book[i].bookTitle;
+			strUpper(book[i].bookTitle);
+			input >> book[i].isbn;
+			strUpper(book[i].isbn);
+			input >> book[i].author;
+			strUpper(book[i].author);
+			input >> book[i].publisher;
+			strUpper(book[i].publisher);
+			input >> book[i].dateAdded;
+			strUpper(book[i].dateAdded);
+			input >> book[i].qtyOnHand;
+			input >> book[i].wholesale;
+			input >> book[i].retail;	
+	}
 
 	// display the 'Main Menu' until item 4 is selected
 	while (choice != 4)
@@ -71,6 +101,8 @@ int main()
 
 			case 4:
 				cout << "\nThank You for Visiting Serendipity Booksellers!\n\n";
+
+				system("pause");
 				exit(0);
 					break;
 

@@ -9,10 +9,9 @@ using namespace std;
 const int NUM_WIDTH = 6;	    // the numeric display length
 const int TITLE_WIDTH = 26;	    // the title display length
 const int PRECISION = 2;	    // the decimal precision
-const double SALES_TAX = 0.06;  // the rate of the sales tax
+const double SALES_TAX = 0.0925;  // the rate of the sales tax
 
 extern BookData book[NUM_BOOKS];	// the array of 'BookData' stuctures
-
 
 //********************************************
 // cashier function                          *
@@ -48,7 +47,7 @@ void cashier()
 
 		// enter date of purchase
 		cin.ignore();
-		cout << "Date(MM/DD/YY): ";
+		cout << "Date(YY/MM/DD): ";
 		cin.getline(transDate,STR_SIZE);
 
 			// 'Add Another Title' add another title until item 2 is selected
