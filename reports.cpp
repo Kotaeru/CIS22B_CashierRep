@@ -22,7 +22,7 @@ void repListing()
 	char* title;
 	
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(YY/MM/DD): ";
+	cout << "\nEnter Today's Date(YYYY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
@@ -95,7 +95,7 @@ void repWholesale()
 	
 
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(YY/MM/DD): ";
+	cout << "\nEnter Today's Date(YYYY/MM/DD): ";
 	cin >> repDate;
 
 	// display header
@@ -173,7 +173,7 @@ void repRetail()
 	char repDate[STR_SIZE];	// stores today's date
 	
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(YY/MM/DD): ";
+	cout << "\nEnter Today's Date(YYYY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
@@ -286,7 +286,7 @@ for (startScan = 0; startScan < NUM_BOOKS - 1; startScan++)
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(YY/MM/DD): ";
+	cout << "\nEnter Today's Date(YYYY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
@@ -384,7 +384,7 @@ void repCost()
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(YY/MM/DD): ";
+	cout << "\nEnter Today's Date(YYYY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
@@ -491,7 +491,7 @@ void repAge()
 	char repDate[STR_SIZE];	// stores today's date
 
 	// prompt the user to enter today's date
-	cout << "\nEnter Today's Date(YY/MM/DD): ";
+	cout << "\nEnter Today's Date(YYYY/MM/DD): ";
 	cin >> repDate;
 
 	cout << endl << endl;
