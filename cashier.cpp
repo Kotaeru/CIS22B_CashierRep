@@ -47,7 +47,7 @@ void cashier()
 
 		// enter date of purchase
 		cin.ignore();
-		cout << "Date(YYYY	/MM/DD): ";
+		cout << "Date(YYYY/MM/DD): ";
 		cin.getline(transDate,STR_SIZE);
 
 			// 'Add Another Title' add another title until item 2 is selected

@@ -9,21 +9,27 @@ void repAge();
 void reports();
 
 template <class T>
-void sort(T arr[])
+void sort(T arr[], int maxIndex, int* maxValue, int startScan, int* tempId, int idPtr[])
 {
-	for (int i = 0; i < NUM_BOOKS; i++)
+	for (startScan = 0; startScan < NUM_BOOKS - 1; startScan++)
 	{
-		int min = i;
-		for (int j = i + 1; j < NUM_BOOKS; i++)
+		maxIndex = startScan;
+		maxValue = arr[startScan];
+		tempId = idPtr[startScan];
+		for (int index = startScan + 1; index < NUM_BOOKS; index++)
 		{
-			if (arr[j] < arr[min])
+			if (*(arr[index]) > *maxValue)
 			{
-				min = j;
+				maxValue = arr[index];
+				tempId = idPtr[index];
+				maxIndex = index;
 			}
 		}
-		T temp = arr[i];
-		arr[i] = arr[min];
-		arr[min] = temp;
+		arr[maxIndex] = arr[startScan];
+		idPtr[maxIndex] = idPtr[startScan];
+		arr[startScan] = maxValue;
+		idPtr[startScan] = tempId;
 	}
+
 }
 

@@ -276,6 +276,9 @@ void editBook()
 
 					book[row].setISBN(isbn, row);
 
+					cout << "\nChanges Have Been Accepted" << endl << endl;
+					system("pause");
+
 						break;
 
 				case 2:
@@ -289,6 +292,9 @@ void editBook()
 					cin.getline(title, STR_SIZE);
 
 					book[row].setTitle(title, row);
+
+					cout << "\nChanges Have Been Accepted" << endl << endl;
+					system("pause");
 
 						break;
 
@@ -304,6 +310,9 @@ void editBook()
 
 					book[row].setAuthor(author, row);
 
+					cout << "\nChanges Have Been Accepted" << endl << endl;
+					system("pause");
+
 						break;
 
 				case 4:
@@ -317,6 +326,9 @@ void editBook()
 					cin.getline(publisher , STR_SIZE);
 
 					book[row].setPub(publisher, row);
+
+					cout << "\nChanges Have Been Accepted" << endl << endl;
+					system("pause");
 
 						break;
 
@@ -332,6 +344,9 @@ void editBook()
 
 					book[row].setDateAdded(date, row);
 
+					cout << "\nChanges Have Been Accepted" << endl << endl;
+					system("pause");
+
 						break;
 
 				case 6:
@@ -345,6 +360,9 @@ void editBook()
 					cin >> quantity;
 
 					book[row].setQty(quantity, row);
+					
+					cout << "\nChanges Have Been Accepted" << endl << endl;
+					system("pause");
 
 						break;
 
@@ -360,6 +378,9 @@ void editBook()
 
 					book[row].setWholesale(wholesale, row);
 
+					cout << "\nChanges Have Been Accepted" << endl << endl;
+					system("pause");
+
 						break;
 
 				case 8:
@@ -373,6 +394,9 @@ void editBook()
 					cin >> retail;
 
 					book[row].setRetail(retail, row);
+
+					cout << "\nChanges Have Been Accepted" << endl << endl;
+					system("pause");
 
 				} // end switch
 
